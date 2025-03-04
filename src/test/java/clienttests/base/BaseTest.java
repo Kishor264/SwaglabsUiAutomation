@@ -1,18 +1,23 @@
-package clienttests;
+package clienttests.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import swaglabs.pages.HomePage;
-import swaglabs.pages.LoginPage;
+import swaglabs.pages.*;
 
 public class BaseTest
 {
     protected WebDriver driver;
     protected HomePage homePage;
     protected LoginPage loginPage;
+    protected InventoryPage inventoryPage;
+    protected ProductDetailsPage productDetailsPage;
+    protected CheckoutPage checkoutPage;
+    protected CheckoutInformationPage checkoutInformationPage;
+    protected CheckoutOverviewPage checkoutOverviewPage;
+    protected CheckoutCompletePage checkoutCompletePage;
     @BeforeClass
     public void setup()
             {
@@ -27,6 +32,12 @@ public class BaseTest
     {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
+        inventoryPage = new InventoryPage(driver);
+        productDetailsPage = new ProductDetailsPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+        checkoutInformationPage = new CheckoutInformationPage(driver);
+        checkoutOverviewPage = new CheckoutOverviewPage(driver);
+        checkoutCompletePage = new CheckoutCompletePage(driver);
 
     }
 

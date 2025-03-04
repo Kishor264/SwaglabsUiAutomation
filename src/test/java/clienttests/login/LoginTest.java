@@ -1,6 +1,6 @@
 package clienttests.login;
 
-import clienttests.BaseTest;
+import clienttests.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest
         Assert.assertEquals(result,"Swag Labs");
         System.out.println(result);
     }
-    @Test (priority = 1)
+    @Test ()
     public void invalidlogintest()
     {
         homePage.enterpassword("newuser")
